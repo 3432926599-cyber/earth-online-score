@@ -1,0 +1,25 @@
+/* 微信X5内核兼容补丁 */
+
+/* Flexbox四重声明 */
+.flex { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; }
+.flex-item { -webkit-box-flex: 1; -webkit-flex: 1; -ms-flex: 1; flex: 1; }
+
+/* 防iOS输入框自动缩放 */
+input, textarea, select { font-size: 16px; }
+
+/* 禁长按菜单 */
+* { -webkit-touch-callout: none; }
+
+/* 禁点击高亮 */
+* { -webkit-tap-highlight-color: transparent; }
+
+/* 动态--vh */
+.fullscreen { min-height: calc(var(--vh, 1vh) * 100); min-height: 100dvh; }
+
+/* 低端机降级 */
+.low-end-mode * { animation: none !important; }
+
+/* 运动偏好 */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}

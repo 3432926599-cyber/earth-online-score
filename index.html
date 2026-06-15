@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover">
+  <meta name="x5-orientation" content="portrait">
+  <meta name="x5-fullscreen" content="true">
+  <meta name="x5-page-mode" content="app">
+  <meta name="format-detection" content="telephone=no,email=no">
+  <title>地球Online · 玩家评估报告</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/magazine.css">
+  <link rel="stylesheet" href="css/x5-fix.css">
+  <script src="https://cdn.bootcdn.net/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script>
+    if (typeof html2canvas === 'undefined') {
+      document.write('<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"><\/script>');
+    }
+  </script>
+</head>
+<body class="magazine-body">
+
+  <div id="app" class="magazine-app">
+
+    <!-- ═══════════ Section 1: 首屏 — 拍立得封面 ═══════════ -->
+    <section id="sec-landing" class="section active">
+      <div class="landing-container">
+        <!-- 拍立得照片框 -->
+        <div class="polaroid-frame">
+          <div class="polaroid-photo">
+            <div class="polaroid-earth"></div>
+            <span class="polaroid-caption">EARTH ONLINE · SNAPSHOT</span>
+          </div>
+        </div>
+
+        <!-- 手写体标题 -->
+        <h1 class="landing-title">你在地球Online<br>的评分是——？</h1>
+        <p class="landing-tagline">80亿人的强制在线生存报告<br>娱乐向 · 别当真但也别不当真</p>
+
+        <!-- 贴纸CTA -->
+        <button id="btn-start" class="sticker-btn">
+          ▸ 撕开此处，开始
+        </button>
+
+        <!-- 胶带装饰 -->
+        <div class="tape-strip">
+          <span class="tape tape-1"></span>
+          <span class="tape tape-2"></span>
+          <span class="tape tape-3"></span>
+        </div>
+
+        <p class="footnote-mag">*本系统仅为娱乐用途，最终解释权归你自己</p>
+      </div>
+    </section>
+
+    <!-- ═══════════ Section 2: 答题页 — 杂志问卷 ═══════════ -->
+    <section id="sec-quiz" class="section">
+      <!-- 进度条 -->
+      <div class="quiz-topbar">
+        <span class="quiz-counter" id="quiz-counter">Q1/24</span>
+        <div class="quiz-progress-track">
+          <div class="quiz-progress-fill" id="quiz-progress"></div>
+        </div>
+        <span class="quiz-module-tag" id="quiz-module">身份确认</span>
+      </div>
+
+      <!-- 题目区 -->
+      <div class="quiz-card" id="quiz-body"></div>
+    </section>
+
+    <!-- ═══════════ Section 3: 结果页（赛博系统界面风） ═══════════ -->
+    <section id="sec-result" class="section section-cyber">
+      <div id="result-card"></div>
+      <div id="result-actions">
+        <button id="btn-share" class="btn-cyber">📋 生成分享卡片</button>
+        <button id="btn-wall" class="btn-cyber-amber">★ 去差评墙 骂策划</button>
+      </div>
+    </section>
+
+    <!-- ═══════════ Section 4: 差评墙 ═══════════ -->
+    <section id="sec-wall" class="section">
+      <div class="wall-mag-container">
+        <h2 class="wall-mag-title">★ 玩家差评墙</h2>
+        <p class="wall-mag-sub">来自全服80亿玩家的真实差评</p>
+        <div id="wall-grid" class="wall-mag-grid"></div>
+        <div class="wall-mag-input">
+          <span class="wall-mag-prompt">>></span>
+          <input type="text" placeholder="提交你的差评…" disabled>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ 底部引流 ═══════════ -->
+    <footer id="sec-footer" class="footer-mag">
+      <div class="footer-divider"></div>
+      <p class="footer-text">想要了解评分机制？想学做同款H5？</p>
+      <p class="footer-link">👉 supersuperchik-home.pages.dev</p>
+      <p class="footer-copy">© 地球Online评分测试 · 娱乐向 · 不存储任何数据</p>
+    </footer>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast-container"></div>
+
+  <!-- 分享覆盖层 -->
+  <div id="share-overlay" class="hidden">
+    <img id="share-img" src="" alt="分享卡片">
+    <p class="share-hint">长按图片保存到相册</p>
+    <button id="btn-close-share" class="btn-cyber">关闭</button>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/quiz.js"></script>
+  <script src="js/achievements.js"></script>
+  <script src="js/scoring.js"></script>
+  <script src="js/card.js"></script>
+  <script src="js/wall.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
