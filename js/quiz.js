@@ -59,6 +59,9 @@ function selectOption(question, optIndex) {
     selected.achievements.forEach(function(key) { checkAchievement(key); });
   }
 
+  // 保存进度
+  saveProgress();
+
   setTimeout(function() { renderQuestion(state.currentQuestion + 1); }, 300);
 }
 
