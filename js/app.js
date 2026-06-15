@@ -198,70 +198,44 @@ function renderResult() {
       '<div class="res-texture-dots"></div>'+
       '<div class="res-texture-grad"></div>'+
 
-      // 拍立得+印章
+      // 顶部：拍立得+印章
       '<div class="res-polaroid-row">'+
         '<div class="res-polaroid-small">'+
           '<div class="res-polaroid-img"></div>'+
-          '<div class="res-polaroid-label">EARTH ONLINE · REPORT</div>'+
         '</div>'+
         '<div class="res-stamp-red">TOP<br>SECRET</div>'+
       '</div>'+
 
       // 标题
       '<div class="res-title-area">'+
-        '<h1 class="res-title">你在地球<span class="res-title-red">Online</span></h1>'+
-        '<p class="res-subtitle">的玩家评估报告</p>'+
-        '<div class="res-divider"></div>'+
+        '<h1 class="res-title">地球<span class="res-title-red">Online</span></h1>'+
+        '<p class="res-subtitle">玩家评估报告 · ' + state.nickname + '</p>'+
       '</div>'+
-
-      // 昵称
-      '<div class="res-nickname">玩家ID：<span>' + state.nickname + '</span></div>'+
 
       // 评分卡
       '<div class="res-score-card">'+
-        '<div class="res-score-emoji">'+ (gradeEmoji[state.grade]||'🫡') +'</div>'+
-        '<div class="res-score-label">您的地球Online 系统评分是</div>'+
         '<div class="res-score-big">'+
           '<span class="res-score-letter">'+state.grade+'</span>'+
           '<span class="res-score-plus">+</span>'+
         '</div>'+
         '<div class="res-score-num">'+state.score+' 分</div>'+
-        '<div class="res-score-tagline">「'+gi.msg+'」</div>'+
+        '<div class="res-score-tagline">'+gi.msg+'</div>'+
       '</div>'+
 
-      // 人格标签
-      '<div class="res-tags-row">'+
-        tags.map(function(t){ return '<span class="res-tag">'+t+'</span>'; }).join('') +
-      '</div>'+
-
-      // 成就TOP3
+      // 我的成就
       '<div class="res-ach-section">'+
-        '<div class="res-ach-title">'+
-          '<span class="res-ach-star">★</span> 我的成就 · TOP 3 <span class="res-ach-star">★</span>'+
-        '</div>'+
+        '<div class="res-ach-title">我的成就</div>'+
         achHTML +
-        (hiddenCount>0 ? '<div class="res-ach-more">扫码查看完整报告中的 '+hiddenCount+' 项隐藏成就 →</div>' : '')+
+        (hiddenCount>0 ? '<div class="res-ach-more">还有 '+hiddenCount+' 项成就，扫码查看完整报告 →</div>' : '')+
       '</div>'+
 
-      // DEBUFF
-      '<div class="res-debuff-row">'+
-        '<span class="res-debuff">⚠ 睡眠副本排队失败</span>'+
-        '<span class="res-debuff">⚠ 金币余额接近零点</span>'+
-      '</div>'+
-
-      // 二维码回流
+      // 二维码
       '<div class="res-qr-row">'+
-        '<img class="res-qr-img" src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://earth-online-score.pages.dev" alt="扫码测评分" crossorigin="anonymous">'+
+        '<img class="res-qr-img" src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://earth-online-score.pages.dev" alt="扫码" crossorigin="anonymous">'+
         '<div class="res-qr-text">'+
-          '<span class="res-qr-title">扫码测测你的地球Online评分 →</span>'+
+          '<span class="res-qr-title">扫码测测你的评分</span>'+
           '<span class="res-qr-url">earth-online-score.pages.dev</span>'+
         '</div>'+
-      '</div>'+
-
-      // 胶带
-      '<div class="res-tape-strip">'+
-        '<span class="res-tape res-tape-1"></span>'+
-        '<span class="res-tape res-tape-2"></span>'+
       '</div>'+
     '</div>';
 }
